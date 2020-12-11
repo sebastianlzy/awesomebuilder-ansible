@@ -1,0 +1,32 @@
+---
+- hosts: all
+  remote_user: ec2-user
+  become: yes
+  become_user: root
+  tasks:
+    - name: ensure yum is updated
+      action: yum name=* state=latest
+      become: yes
+      become_user: root
+    - name: Update yum repo to install nodejs
+      shell: "curl -sL https://rpm.nodesource.com/setup_10.x | sudo bash -"
+    - name: install necessary git, curl and wget
+      yum:
+        name:
+          - git
+          - curl
+          - wget
+          - nodejs
+        state: present
+      become: yes
+      become_user: root
+    - name: install pm2
+      shell: "npm install -g pm2"
+    - name: install create-react-app
+      shell: "npm install -g create-react-app"
+    - name: git checkout awesomebuilder-ui
+      shell: "cd /home/ec2-user/awesomebuilder-ui; git reset --hard; git pull origin master;"
+    - name: install npm packages
+      shell: "cd /home/ec2-user/awesomebuilder-ui; npm install;"
+    - name: restart awesomebuilder-ui with port 80
+      shell: "pm2 restart webserver"
