@@ -28,5 +28,7 @@
       shell: "cd /home/ec2-user/awesomebuilder-ui; git reset --hard; git pull origin master;"
     - name: install npm packages
       shell: "cd /home/ec2-user/awesomebuilder-ui; npm install;"
-    - name: restart awesomebuilder-ui with port 80
-      shell: "pm2 restart webserver"
+    - name: restart react with port 80
+      shell: "pm2 restart reactserver"
+    - name: restart express with port 5000
+      shell: "pm2 restart expressserver"
