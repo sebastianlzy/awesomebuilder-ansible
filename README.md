@@ -2,7 +2,7 @@
 
 ### High level architecture
 
-![CICD](https://github.com/sebastianlzy/draw-io/raw/master/awesomebuilderIII-CICD.png)
+![CICD](https://github.com/sebastianlzy/draw-io/raw/master/awesomebuilder/awesomebuilderIII-CICD.png)
 
 #### Continuous integration/Continuous Deployment
 
