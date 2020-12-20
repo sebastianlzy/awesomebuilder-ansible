@@ -2,6 +2,9 @@
 
 ### High level architecture
 
+1. [Jenkins server](http://ec2-3-1-6-16.ap-southeast-1.compute.amazonaws.com/)
+2. [Ansible script](https://github.com/sebastianlzy/awesomebuilder-ansible) 
+
 ![CICD](https://github.com/sebastianlzy/draw-io/raw/master/awesomebuilder/awesomebuilderIII-CICD.png)
 
 #### Continuous integration/Continuous Deployment
@@ -17,7 +20,14 @@ Continuous deployment is a software development practice where code changes are 
 ![CICD](./readme/updateConfiguration.gif)
 
 ##### What to expect?
-The Jenkins job will pull in the latest cloudformation template to update the minimum number of instance to 2  
+The Jenkins job will pull in the latest cloudformation template to update the minimum number of instance to 2
+
+#### Add security group to ALB to restrict access to Cloudfront origin
+
+
+
+##### What to expect?
+Access to the web application is restricted to cloudfront endpoints    
 
 
 #### Code change triggering a deployment
