@@ -24,7 +24,7 @@ The Jenkins job will pull in the latest cloudformation template to update the mi
 
 #### Add security group to ALB to restrict access to Cloudfront origin
 
-
+![AddSG](./readme/cloudfrontSG.gif)
 
 ##### What to expect?
 Access to the web application is restricted to cloudfront endpoints    
