@@ -15,24 +15,26 @@ Continuous deployment is a software development practice where code changes are 
 
 ### Scenarios
 
-#### Changing configuration of infrastructure
-
-![CICD](./readme/updateConfiguration.gif)
-
-##### What to expect?
-The Jenkins job will pull in the latest cloudformation template to update the minimum number of instance to 2
-
-#### Add security group to ALB to restrict access to Cloudfront origin
-
-![AddSG](./readme/cloudfrontSG.gif)
-
-##### What to expect?
-Access to the web application is restricted to cloudfront endpoints    
-
-
 #### Code change triggering a deployment
 
 ![CICD](./readme/CICD.gif)
 
 ##### What to expect?
 The commit triggers a job in Jenkins to run test. Once passed, it will trigger a separate downstream task to deploy the application to all the instances using a Ansible playbook
+
+#### Add security group to ALB to restrict access to Cloudfront origin
+
+![AddSG](./readme/cloudfrontSG.gif)
+
+##### What to expect?
+Access to the web application is restricted to cloudfront endpoints
+
+#### Changing configuration of infrastructure
+
+![CICD](./readme/updateConfiguration.gif)
+
+##### What to expect?
+The Jenkins job will pull in the latest cloudformation template to update the minimum number of instance to 2    
+
+
+
